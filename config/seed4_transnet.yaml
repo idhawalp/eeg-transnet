@@ -1,0 +1,32 @@
+# Model
+network: TransNet
+network_args: 
+  num_classes: 4
+  num_samples: 800      
+  num_channels: 62
+  embed_dim: 32
+  pool_size: 100         
+  pool_stride: 15
+  num_heads: 8
+  fc_ratio: 4
+  depth: 4
+  attn_drop: 0.8        
+  fc_drop: 0.8          
+
+# Data Paths
+data_path: ./dataset/seed4_processed
+out_folder: output/seed4_results
+
+# Training Parameters
+preferred_device: gpu
+nGPU: 0
+random_seed: 42
+batch_size: 112          # MAXIMIZED for 6GB VRAM
+epochs: 100
+patience: 20            
+lr: 0.0005              
+weight_decay: 0.01      
+
+# Data Augmentation
+num_classes: 4
+num_segs: 8
